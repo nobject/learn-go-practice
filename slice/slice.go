@@ -1,0 +1,5 @@
+package slice
+
+func InitSlice() {
+
+}
