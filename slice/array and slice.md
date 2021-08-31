@@ -14,7 +14,7 @@
 ### nil slice 与 empty slice的区别
 ```
 两者在使用上的区别
-nil slice可以用== nil判断，而empty slice不行，empty slice只是代表空列表，里面的cap与len=0,并不代表==nil
+nil slice可以用== nil判断，而empty slice不行，empty slice只是代表空列表，里面的cap与len=0,data指向的zero固定数组地址，而nil slice底层的data指向的是一个无效的地址
 
 在前端返回的data数据中如约定列表不存在需要返回空列表，此时我们还需要额外的初始化data里面的slice
 ```

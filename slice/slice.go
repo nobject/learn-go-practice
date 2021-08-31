@@ -12,13 +12,17 @@ func InitSlice() {
 
 	// always true
 	if sliceInt == nil {
-		fmt.Println("sliceInt is nil")
+		fmt.Printf("sliceInt is nil,slice data:%p,len:%d,cap:%d\n", sliceInt, len(sliceInt), cap(sliceInt))
 	}
 
 	// always false
 	if sliceInt2 == nil {
 		fmt.Println("sliceInt2 is nil")
 	}
+
+	fmt.Printf("sliceInt2 data:%p,len:%d,cap:%d\n", sliceInt2, len(sliceInt2), cap(sliceInt2))
+	var sliceInt3 = make([]int, 0)
+	fmt.Printf("sliceInt3 data:%p,len:%d,cap:%d\n", sliceInt3, len(sliceInt3), cap(sliceInt3))
 }
 
 // 容量与长度
