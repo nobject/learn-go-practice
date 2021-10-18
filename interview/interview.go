@@ -31,6 +31,7 @@ func printNum(printNumChan, printLetterChan chan struct{}) {
 
 	}
 }
+
 func printLetter(printNumChan, printLetterChan chan struct{}, wait *sync.WaitGroup) {
 	str := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	index := 0

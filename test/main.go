@@ -2,23 +2,32 @@ package main
 
 import "fmt"
 
-type People struct {
+// 定义接口
+type Car interface {
+	GetName() string
+	Run()
 }
 
-func (p *People) String() string {
-	return fmt.Sprintf("peopele: %v", p)
+// 定义结构体
+type Tesla struct {
+	Name string
+}
+
+// 实现接口的GetName()方法
+func (t Tesla) GetName() string {
+	t.Name = "test"
+	return t.Name
+}
+
+// 实现接口的Run()方法
+func (t *Tesla) Run() {
+	fmt.Printf("%s is running\n", t.Name)
 }
 
 func main() {
-	p := &People{}
-	p.String()
-	//c := make(chan int)
-	//
-	//go func() {
-	//	c <- 1 // send to channel
-	//}()
-	//
-	//x := <-c // recv from channel
-	//
-	//fmt.Println(x)
+	var c Car
+	t := Tesla{"Tesla Model S"}
+	c = &t  // 上面是用指针*Tesla实现了接口的方法，这里要传地址
+	fmt.Println(c.GetName())
+	c.Run()
 }

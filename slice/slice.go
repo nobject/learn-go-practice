@@ -47,19 +47,19 @@ func ArraySlice() {
 
 // 扩容
 func Append() {
-	slice := []int{1, 2, 3, 4, 5}
-	slice2 := slice[0:3]
-	// 发生扩容后，如超过底层数组的容量，会新建一个新的切片，引用的是新的底层数组
-	// 当原容量不够时，新的切片的容量会按照之前容量的2倍扩容
-	slice3 := append(slice2, []int{6, 7, 8}...)
-	fmt.Printf("slice:%p,slice:%d,len:%d,cap,%d\n", slice, slice, len(slice), cap(slice))
-	fmt.Printf("slice2:%p,slice2:%d,len:%d,cap,%d\n", slice2, slice2, len(slice2), cap(slice2))
-	fmt.Printf("slice3:%p,slice3:%d,len:%d,cap,%d\n", slice3, slice3, len(slice3), cap(slice3))
-	// 当原来的容量为1024后，新的切片容量会按1.25倍扩容
-	slice4 := make([]int, 1024)
-	fmt.Printf("slice4:%p,len:%d,cap,%d\n", slice4, len(slice4), cap(slice4))
-	slice4 = append(slice4, []int{1}...)
-	fmt.Printf("after append,slice4:%p,len:%d,cap,%d\n", slice4, len(slice4), cap(slice4))
+	//slice := []int{1, 2, 3, 4, 5}
+	//slice2 := slice[0:3]
+	//// 发生扩容后，如超过底层数组的容量，会新建一个新的切片，引用的是新的底层数组
+	//// 当原容量不够时，新的切片的容量会按照之前容量的2倍扩容
+	//slice3 := append(slice2, []int{6, 7, 8}...)
+	//fmt.Printf("slice:%p,slice:%d,len:%d,cap,%d\n", slice, slice, len(slice), cap(slice))
+	//fmt.Printf("slice2:%p,slice2:%d,len:%d,cap,%d\n", slice2, slice2, len(slice2), cap(slice2))
+	//fmt.Printf("slice3:%p,slice3:%d,len:%d,cap,%d\n", slice3, slice3, len(slice3), cap(slice3))
+	//// 当原来的容量为1024后，新的切片容量会按1.25倍扩容
+	//slice4 := make([]int, 1024)
+	//fmt.Printf("slice4:%p,len:%d,cap,%d\n", slice4, len(slice4), cap(slice4))
+	//slice4 = append(slice4, []int{1}...)
+	//fmt.Printf("after append,slice4:%p,len:%d,cap,%d\n", slice4, len(slice4), cap(slice4))
 
 	slice5 := make([]int, 1280)
 	fmt.Printf("slice5:%p,len:%d,cap,%d\n", slice5, len(slice5), cap(slice5))
